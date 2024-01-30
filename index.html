@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="aqua">
+<span class="percentBar">
+    <h3 class="number">0%</h3>
+</span>
+    </div>
+<div class="spongeblob">
+    <img src="2aebd6c3c9c0ffcb14abac5fbfa287e7.jpg">
+<div class="titlebar">
+    <h2>spongeblog</h2>
+</div>
+</div>
+    <script>
+        let i = 0;
+        let spongeblob = document.querySelector('.spongeblob');
+        let aqua = document.querySelector('.aqua');
+        let body = document.querySelector('body');
+        let number = document.querySelector('.number');
+        let percentBar = document.querySelector('.percentBar');
+        let blog = document.querySelector('.blog');
+
+        let interval = setInterval(function(){
+            number.innerHTML = i+'<span>%</span>';
+            percentBar.style.width = i+'%';
+            i++
+            if(i == 101){
+                clearInterval(interval)
+                setTimeout(function(){
+                    aqua.style.opacity = '0';
+                    aqua.style.visibility = 'hidden';
+                    body.style.background = '#c860eb';
+                    spongeblob.style.opacity = '1';
+                    spongeblob.style.visibility = 'visible';
+                })
+            }
+        },100);
+    </script>
+</body>
+</html>
